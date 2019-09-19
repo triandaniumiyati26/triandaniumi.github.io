@@ -53,7 +53,7 @@
       
         
         
-        <meta name="theme-color" content="#e91e63">
+        <meta name="theme-color" content="#ef5350">
       
     
     
@@ -104,7 +104,7 @@
   
     
     
-    <body dir="ltr" data-md-color-primary="pink" data-md-color-accent="purple">
+    <body dir="ltr" data-md-color-primary="red" data-md-color-accent="pink">
   
     <svg class="md-svg">
       <defs>
@@ -422,6 +422,20 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#mengukur-jarak-tipe-ordinal" class="md-nav__link">
+    Mengukur Jarak Tipe Ordinal
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#menghitung-jarak-tipe-campuran" class="md-nav__link">
+    Menghitung Jarak Tipe Campuran
+  </a>
+  
+</li>
+      
       
       
       
@@ -570,6 +584,20 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#mengukur-jarak-tipe-ordinal" class="md-nav__link">
+    Mengukur Jarak Tipe Ordinal
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#menghitung-jarak-tipe-campuran" class="md-nav__link">
+    Menghitung Jarak Tipe Campuran
+  </a>
+  
+</li>
+      
       
       
       
@@ -681,46 +709,37 @@ $$
 $$
 d ( x , y ) = \sum _ { i = 1 } ^ { n } \delta ( a _ { i } ( x ) , a _ { i } ( y ) )
 $$
-keterangan :
-n = banyaknya atribut
-<span><span class="MathJax_Preview">a_i(x)</span><script type="math/tex">a_i(x)</script></span> dan <span><span class="MathJax_Preview">a_i(y)</span><script type="math/tex">a_i(y)</script></span> =nilai atribut ke i yaitu <span><span class="MathJax_Preview">A_i</span><script type="math/tex">A_i</script></span> dari masing masing objek x dan y
-\delta \ ( a_{ i } ( x ) , a_{ i } ( y ) )  adalah 0 jika a _ { i } ( x ) = a _ { i } ( y ) dan 1 sebaliknya </p>
+keterangan : <br/>
+n = banyaknya atribut <br/>
+<span><span class="MathJax_Preview">a_i(x)</span><script type="math/tex">a_i(x)</script></span> dan <span><span class="MathJax_Preview">a_i(y)</span><script type="math/tex">a_i(y)</script></span> =nilai atribut ke i yaitu <span><span class="MathJax_Preview">A_i</span><script type="math/tex">A_i</script></span> dari masing masing objek x dan y <br/>
+<span><span class="MathJax_Preview">\delta \ ( a_{ i } ( x ) , a_{ i } ( y ) )</span><script type="math/tex">\delta \ ( a_{ i } ( x ) , a_{ i } ( y ) )</script></span>  adalah 0 jika <span><span class="MathJax_Preview">a _ { i } ( x ) = a _ { i } ( y )</span><script type="math/tex">a _ { i } ( x ) = a _ { i } ( y )</script></span> dan 1 sebaliknya </p>
 <h3 id="value-difference-metric-vdm"><em>Value Difference Metric (VDM)</em><a class="headerlink" href="#value-difference-metric-vdm" title="Permanent link">&para;</a></h3>
 <p>Versi sederhana dari VDM tanpa skema pembobotan didefinsisikan dengan :
 $$
 d ( x , y ) = \sum _ { i = 1 } ^ { n } \sum _ { c = 1 } ^ { C } \left| P ( c | a _ { i } ( x ) ) - P ( c | a _ { i } ( y ) ) \right |
 $$
-dimana :
-C = adalah banyaknya kelas
-P(c|a_i(x))
+dimana : <br/>
+C = adalah banyaknya kelas <br/>
+<span><span class="MathJax_Preview">a_i(x),P(c|a_i(x))</span><script type="math/tex">a_i(x),P(c|a_i(x))</script></span> = probabilitas bersyarat dimana kelas y adalah c dengan atribut <span><span class="MathJax_Preview">A_i</span><script type="math/tex">A_i</script></span> memiliki nilai <span><span class="MathJax_Preview">a_i(y)</span><script type="math/tex">a_i(y)</script></span>
 $$
 d ( x , y ) = \sum _ { c = 1 } ^ { C } \left | P ( c | x ) - P ( c | y ) \right|
-$$</p>
+$$
+diman probabilitas keanggotaan kelas diestimasi dengan <span><span class="MathJax_Preview">P(c|x) dan P(c|y)</span><script type="math/tex">P(c|x) dan P(c|y)</script></span> didekati dengan Naive Bayes,</p>
 <h3 id="minimum-risk-metric-mrm"><em>Minimum Risk Metric (MRM)</em><a class="headerlink" href="#minimum-risk-metric-mrm" title="Permanent link">&para;</a></h3>
-<div>
-<div class="MathJax_Preview">
-d ( x , y ) = \sum _ { c = 1 } ^ { C } P ( c | x ) ( 1 - P ( c | y ) )
+<p>MRM meminimumkan risk of misclassification yang didefinisikan dengan : <br/>
 $$
-## Mengukur Jarak Tipe Ordinal
+d ( x , y ) = \sum _ { c = 1 } ^ { C } P ( c | x ) ( 1 - P ( c | y ) )
+$$</p>
+<h2 id="mengukur-jarak-tipe-ordinal">Mengukur Jarak Tipe Ordinal<a class="headerlink" href="#mengukur-jarak-tipe-ordinal" title="Permanent link">&para;</a></h2>
+<p>Menghitung disimilarity terhadap f fitur sebagai berikut:
 $$
 z _ { i f } = \frac { r _ { i f } - 1 } { M _ { f } - 1 }
-$$
-## Menghitung Jarak Tipe Campuran
-$$
-d ( i , j ) = \frac { \sum _ { f = 1 } ^ { p } \delta _ { i j } ^ { ( f ) } d _ { i j } ^ { ( f ) } } { \sum _ { f = 1 } ^ { p } \delta _ { i j } ^ { ( f ) } }
-</div>
-<script type="math/tex; mode=display">
-d ( x , y ) = \sum _ { c = 1 } ^ { C } P ( c | x ) ( 1 - P ( c | y ) )
-$$
-## Mengukur Jarak Tipe Ordinal
-$$
-z _ { i f } = \frac { r _ { i f } - 1 } { M _ { f } - 1 }
-$$
-## Menghitung Jarak Tipe Campuran
+$$</p>
+<h2 id="menghitung-jarak-tipe-campuran">Menghitung Jarak Tipe Campuran<a class="headerlink" href="#menghitung-jarak-tipe-campuran" title="Permanent link">&para;</a></h2>
+<p>Ketidaksamaan (disimilarity ) antara objek i dan j dinyatakan dengan :
 $$
 d ( i , j ) = \frac { \sum _ { f = 1 } ^ { p } \delta _ { i j } ^ { ( f ) } d _ { i j } ^ { ( f ) } } { \sum _ { f = 1 } ^ { p } \delta _ { i j } ^ { ( f ) } }
-</script>
-</div>
+$$</p>
                 
                   
                 
