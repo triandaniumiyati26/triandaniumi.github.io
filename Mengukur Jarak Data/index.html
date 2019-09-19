@@ -388,6 +388,40 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#mengukur-jarak-tipe-categorical" class="md-nav__link">
+    Mengukur Jarak Tipe categorical
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#overlay-metric" class="md-nav__link">
+    Overlay Metric
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#value-difference-metric-vdm" class="md-nav__link">
+    Value Difference Metric (VDM)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#minimum-risk-metric-mrm" class="md-nav__link">
+    Minimum Risk Metric (MRM)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
       
       
       
@@ -502,6 +536,40 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#mengukur-jarak-tipe-categorical" class="md-nav__link">
+    Mengukur Jarak Tipe categorical
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#overlay-metric" class="md-nav__link">
+    Overlay Metric
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#value-difference-metric-vdm" class="md-nav__link">
+    Value Difference Metric (VDM)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#minimum-risk-metric-mrm" class="md-nav__link">
+    Minimum Risk Metric (MRM)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
       
       
       
@@ -589,7 +657,7 @@ keterangan : <br/>
 <h3 id="pearson-correlation"><em>Pearson correlation</em><a class="headerlink" href="#pearson-correlation" title="Permanent link">&para;</a></h3>
 <p>Pearson correlation banyak digunakan dalam data expresi gen. Ukuran similaritas ini menghitung similaritas antara duan bentuk pola expresi gen.
 $$
-Pearson ( x , y ) = \frac { \sum _ { i = 1 } ^ { n } ( x _ { i } - \mu _ { x } ) ( y _ { i } - \mu _ { y } ) } { \sqrt { \sum _ { i = 1 } ^ { n } ( x _ { i } - y _ { i } ) ^ { 2 } } \sqrt { \sum _ { i = 1 } ^ { n } ( x _ { i } - y _ { i } ) ^ { 2 } } }
+Pearson ( x , y ) = \frac { \sum _ { i = 1 } ^ { n } ( x _ { i } - \mu _ { x } ) ( y _ { i } - \mu _ { y } ) } { \sqrt { \sum _ { i = 1 } ^ { n } ( x _ { i } - y _ { i } ) ^ { 2 } } \sqrt { \sum _ { i 2= 1 } ^ { n } ( x _ { i } - y _ { i } ) ^ { 2 } } }
 $$
 <br/></p>
 <h2 id="mengukur-jarak-atribut-binary">Mengukur Jarak Atribut Binary<a class="headerlink" href="#mengukur-jarak-atribut-binary" title="Permanent link">&para;</a></h2>
@@ -597,57 +665,40 @@ $$
 p, di mana p=q+r+s+t
 $$
 d ( i , j ) = \frac { r + s } { q + r + s + t }
-$$</p>
-<div>
-<div class="MathJax_Preview">
-d ( i , j ) = \frac { r + s } { q + r + s }
 $$
-Persamaan similarity dibawah ini disebut dengan **Jaccard coefficient**
+Diberikan dua atribut biner asimetris, pencocokan keduanya 1 (kecocokan positif) kemudian dianggap lebih signifikan daripada kecocokan negatif. Ketidaksamaan berdasarkan atribut-atribut ini disebut asimetris biner dissimilarity, di mana jumlah kecocokan negatif, t, dianggap tidak penting dan dengan demikian diabaikan. Berikut perhitungannya :
 $$
 d ( i , j ) = \frac { r + s } { q + r + s }
 $$
-&lt;br/&gt;
-## Mengukur Jarak Tipe categorical
-### *Overlay Metric*
-Overlay Metric adalah ukuran jarak yang paling sederhana ketika semua atribut adalah bertipe nominal
+Persamaan similarity dibawah ini disebut dengan <strong>Jaccard coefficient</strong>
+$$
+d ( i , j ) = \frac { r + s } { q + r + s }
+$$
+<br/></p>
+<h2 id="mengukur-jarak-tipe-categorical">Mengukur Jarak Tipe categorical<a class="headerlink" href="#mengukur-jarak-tipe-categorical" title="Permanent link">&para;</a></h2>
+<h3 id="overlay-metric"><em>Overlay Metric</em><a class="headerlink" href="#overlay-metric" title="Permanent link">&para;</a></h3>
+<p>Overlay Metric adalah ukuran jarak yang paling sederhana ketika semua atribut adalah bertipe nominal
 $$
 d ( x , y ) = \sum _ { i = 1 } ^ { n } \delta ( a _ { i } ( x ) , a _ { i } ( y ) )
 $$
 keterangan :
 n = banyaknya atribut
-a_i(x) 
-### *Value Difference Metric (VDM)*
+<span><span class="MathJax_Preview">a_i(x)</span><script type="math/tex">a_i(x)</script></span> dan <span><span class="MathJax_Preview">a_i(y)</span><script type="math/tex">a_i(y)</script></span> =nilai atribut ke i yaitu <span><span class="MathJax_Preview">A_i</span><script type="math/tex">A_i</script></span> dari masing masing objek x dan y
+\delta \ ( a_{ i } ( x ) , a_{ i } ( y ) )  adalah 0 jika a _ { i } ( x ) = a _ { i } ( y ) dan 1 sebaliknya </p>
+<h3 id="value-difference-metric-vdm"><em>Value Difference Metric (VDM)</em><a class="headerlink" href="#value-difference-metric-vdm" title="Permanent link">&para;</a></h3>
+<p>Versi sederhana dari VDM tanpa skema pembobotan didefinsisikan dengan :
 $$
 d ( x , y ) = \sum _ { i = 1 } ^ { n } \sum _ { c = 1 } ^ { C } \left| P ( c | a _ { i } ( x ) ) - P ( c | a _ { i } ( y ) ) \right |
-</div>
-<script type="math/tex; mode=display">
-d ( i , j ) = \frac { r + s } { q + r + s }
 $$
-Persamaan similarity dibawah ini disebut dengan **Jaccard coefficient**
+dimana :
+C = adalah banyaknya kelas
+P(c|a_i(x))
 $$
-d ( i , j ) = \frac { r + s } { q + r + s }
-$$
-<br/>
-## Mengukur Jarak Tipe categorical
-### *Overlay Metric*
-Overlay Metric adalah ukuran jarak yang paling sederhana ketika semua atribut adalah bertipe nominal
-$$
-d ( x , y ) = \sum _ { i = 1 } ^ { n } \delta ( a _ { i } ( x ) , a _ { i } ( y ) )
-$$
-keterangan :
-n = banyaknya atribut
-a_i(x) 
-### *Value Difference Metric (VDM)*
-$$
-d ( x , y ) = \sum _ { i = 1 } ^ { n } \sum _ { c = 1 } ^ { C } \left| P ( c | a _ { i } ( x ) ) - P ( c | a _ { i } ( y ) ) \right |
-</script>
-</div>
-<div>
-<div class="MathJax_Preview">
 d ( x , y ) = \sum _ { c = 1 } ^ { C } \left | P ( c | x ) - P ( c | y ) \right|
-$$
-### *Minimum Risk Metric (MRM)*
-$$
+$$</p>
+<h3 id="minimum-risk-metric-mrm"><em>Minimum Risk Metric (MRM)</em><a class="headerlink" href="#minimum-risk-metric-mrm" title="Permanent link">&para;</a></h3>
+<div>
+<div class="MathJax_Preview">
 d ( x , y ) = \sum _ { c = 1 } ^ { C } P ( c | x ) ( 1 - P ( c | y ) )
 $$
 ## Mengukur Jarak Tipe Ordinal
@@ -659,10 +710,6 @@ $$
 d ( i , j ) = \frac { \sum _ { f = 1 } ^ { p } \delta _ { i j } ^ { ( f ) } d _ { i j } ^ { ( f ) } } { \sum _ { f = 1 } ^ { p } \delta _ { i j } ^ { ( f ) } }
 </div>
 <script type="math/tex; mode=display">
-d ( x , y ) = \sum _ { c = 1 } ^ { C } \left | P ( c | x ) - P ( c | y ) \right|
-$$
-### *Minimum Risk Metric (MRM)*
-$$
 d ( x , y ) = \sum _ { c = 1 } ^ { C } P ( c | x ) ( 1 - P ( c | y ) )
 $$
 ## Mengukur Jarak Tipe Ordinal
